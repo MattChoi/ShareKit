@@ -62,12 +62,34 @@
                                                                                                target:self
                                                                                                action:@selector(cancel)] autorelease];
 		
-		self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit
-                                                                                                target:self
-                                                                                                action:@selector(edit)] autorelease];
+		/*
+         self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:SHKLocalizedString(@"Edit")
+         style:UIBarButtonItemStyleBordered
+         target:self
+         action:@selector(edit)] autorelease];
+         */
+        
+		self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:SHKLocalizedString(@"Logout")
+																				   style:UIBarButtonItemStyleBordered 
+																				  target:self 
+																				  action:@selector(logout)] autorelease];
 	}
     
 	return self;
+}
+
+- (void)logout
+{
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:SHKLocalizedString(@"Logout")
+                                                    message:SHKLocalizedString(@"Are you sure you want to logout of all share services?")
+                                                   delegate:self
+                                          cancelButtonTitle:SHKLocalizedString(@"Cancel")
+                                          otherButtonTitles:@"Logout",nil];
+	
+	[alert show];
+	[alert release];
+	
+	[SHK logoutOfAll];
 }
 
 - (void)viewDidLoad
