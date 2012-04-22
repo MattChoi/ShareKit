@@ -194,7 +194,8 @@ BOOL SHKinit;
 		
 		if ([nextResponder isKindOfClass:[UIViewController class]])
 			result = nextResponder;
-		
+		else if ([topWindow respondsToSelector:@selector(rootViewController)] && topWindow.rootViewController != nil)
+            result = topWindow.rootViewController;
 		else
 			NSAssert(NO, @"ShareKit: Could not find a root view controller.  You can assign one manually by calling [[SHK currentHelper] setRootViewController:YOURROOTVIEWCONTROLLER].");
 	}
@@ -350,6 +351,31 @@ BOOL SHKinit;
 		// Save defaults to prefs
 		[self setFavorites:favoriteSharers forType:type];
 	}
+    
+    // Remove all sharers which are not part of the SHKSharers.plist
+    NSDictionary *sharersDict = [self sharersDictionary];
+    NSArray *keys = [sharersDict allKeys];
+    NSMutableSet *allAvailableSharers = [NSMutableSet set];
+    for (NSString *key in keys) {
+        NSArray *sharers = [sharersDict objectForKey:key];
+        [allAvailableSharers addObjectsFromArray:sharers];
+    }
+    NSMutableSet *favoriteSharersSet = [NSMutableSet setWithArray:favoriteSharers];
+    [favoriteSharersSet minusSet:allAvailableSharers];
+    if ([favoriteSharersSet count] > 0)
+    {
+        NSMutableArray *newFavs = [favoriteSharers mutableCopy];
+		for(NSString *sharerId in favoriteSharersSet)
+		{
+			[newFavs removeObject:sharerId];
+		}
+        
+        // Update
+		favoriteSharers = [NSArray arrayWithArray:newFavs];
+		[self setFavorites:favoriteSharers forType:type];
+		
+		[newFavs release];
+    }
 	
 	// Make sure the favorites are not using any exclusions, remove them if they are.
 	NSArray *exclusions = [[NSUserDefaults standardUserDefaults] objectForKey:@"SHKExcluded"];
@@ -373,6 +399,8 @@ BOOL SHKinit;
 
 + (void)pushOnFavorites:(NSString *)className forType:(SHKShareType)type
 {
+    if(![SHKCONFIG(autoOrderFavoriteSharers) boolValue]) return;
+    
     NSArray *exclusions = [[NSUserDefaults standardUserDefaults] objectForKey:@"SHKExcluded"];
     if (exclusions != nil)
 	{
@@ -692,6 +720,31 @@ NSString * SHKEncodeURL(NSURL * value)
                                                                            kCFStringEncodingUTF8);
     [result autorelease];
 	return result;
+}
+
+NSString * SHKFlattenHTML(NSString * value, BOOL preserveLineBreaks)
+{
+    // Modified from http://rudis.net/content/2009/01/21/flatten-html-content-ie-strip-tags-cocoaobjective-c
+    NSScanner *scanner;
+    NSString *text = nil;
+    
+    scanner = [NSScanner scannerWithString:value];
+    
+    while ([scanner isAtEnd] == NO) 
+    {
+        [scanner scanUpToString:@"<" intoString:NULL]; 
+        [scanner scanUpToString:@">" intoString:&text];
+        
+        value = [value stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"%@>", text] withString:@" "];
+        
+    }
+    
+    if (preserveLineBreaks == NO)
+    {
+        value = [value stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    }
+    
+    return [value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];	
 }
 
 void SHKSwizzle(Class c, SEL orig, SEL newClassName)

@@ -73,6 +73,7 @@
 																				   style:UIBarButtonItemStyleBordered 
 																				  target:self 
 																				  action:@selector(logout)] autorelease];
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
 	}
     
 	return self;

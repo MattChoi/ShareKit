@@ -1,8 +1,8 @@
 //
-//  LegacySHKConfigurationDelegate.h
+//  SHKCustomFormControllerLargeTextField.m
 //  ShareKit
 //
-//  Created by Edward Dale on 10/16/10.
+//  Created by Nathan Weiner on 6/28/10.
 
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -25,9 +25,11 @@
 //
 //
 
-#import <Foundation/Foundation.h>
-#import "DefaultSHKConfigurator.h"
+#import "SHKCustomFormControllerLargeTextField.h"
 
-@interface LegacySHKConfigurator : DefaultSHKConfigurator
+
+@implementation SHKCustomFormControllerLargeTextField
+
+// See http://getsharekit.com/customize/ for additional information on customizing
 
 @end
