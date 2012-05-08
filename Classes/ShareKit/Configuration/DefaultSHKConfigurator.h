@@ -55,6 +55,7 @@
 - (NSString*)facebookLocalAppId;
 - (NSArray*)facebookListOfPermissions;
 - (NSString*)readItLaterKey;
+- (NSString*)diigoKey;
 - (NSNumber*)forcePreIOS5TwitterAccess;
 - (NSString*)twitterConsumerKey;
 - (NSString*)twitterSecret;
@@ -77,6 +78,9 @@
 - (NSString*)weiboAppSecret;
 - (NSString*)weiboId;
 - (NSNumber*)weiboUseXAuth;
+- (NSString*)readabilityConsumerKey;
+- (NSString*)readabilitySecret;
+- (NSNumber*)readabilityUseXAuth;
 - (NSString*)foursquareV2ClientId;
 - (NSString*)foursquareV2RedirectURI;
 - (NSNumber*)shareMenuAlphabeticalOrder;

@@ -93,6 +93,10 @@
 	return @"";
 }
 
+// Diigo - http://www.diigo.com/api_keys/new/
+- (NSString*)diigoKey {
+  return @"";
+}
 // Twitter - http://dev.twitter.com/apps/new
 /*
  Important Twitter settings to get right:
@@ -214,6 +218,18 @@
 	return [NSNumber numberWithInt:0];
 }
 
+// Readability - http://www.readability.com/publishers/api/
+- (NSString*)readabilityConsumerKey {
+	return @"";
+}
+
+- (NSString*)readabilitySecret {
+	return @"";
+}
+// To use xAuth, set to 1, Currently ONLY supports XAuth
+- (NSNumber*)readabilityUseXAuth {
+	return [NSNumber numberWithInt:1];
+}
 // Foursquare V2 - https://developer.foursquare.com
 - (NSString*)foursquareV2ClientId {
     return @"";
@@ -279,7 +295,7 @@
  These values are used to define the default favorite sharers appearing on ShareKit's action sheet.
  */
 - (NSArray*)defaultFavoriteURLSharers {
-    return [NSArray arrayWithObjects:@"SHKTwitter",@"SHKFacebook",@"SHKReadItLater",@"SHKVkontakte", nil];
+    return [NSArray arrayWithObjects:@"SHKTwitter",@"SHKFacebook",@"SHKReadability", @"SHKReadItLater",@"SHKVkontakte", nil];
 }
 - (NSArray*)defaultFavoriteImageSharers {
     return [NSArray arrayWithObjects:@"SHKMail",@"SHKFacebook", @"SHKCopy",@"SHKVkontakte", nil];
