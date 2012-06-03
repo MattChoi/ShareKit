@@ -25,6 +25,10 @@
 		43C91D1D11EB963600F31FAE /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43C91D1C11EB963600F31FAE /* MainWindow-iPad.xib */; };
 		43D1DEF011D5CDD200550D75 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D1DEEF11D5CDD200550D75 /* SystemConfiguration.framework */; };
 		43EF406E11D3FFF800B1F700 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43EF406D11D3FFF800B1F700 /* Security.framework */; };
+		57EE9142157C2A14006F1B1A /* SHKWeibo.h in Headers */ = {isa = PBXBuildFile; fileRef = 57EE9140157C2A14006F1B1A /* SHKWeibo.h */; };
+		57EE9143157C2A14006F1B1A /* SHKWeibo.h in Headers */ = {isa = PBXBuildFile; fileRef = 57EE9140157C2A14006F1B1A /* SHKWeibo.h */; };
+		57EE9144157C2A14006F1B1A /* SHKWeibo.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EE9141157C2A14006F1B1A /* SHKWeibo.m */; };
+		57EE9145157C2A14006F1B1A /* SHKWeibo.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EE9141157C2A14006F1B1A /* SHKWeibo.m */; };
 		7A0F91D0156B9FF2009CB40A /* SHKDelicious.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F91CE156B9FF2009CB40A /* SHKDelicious.m */; };
 		7A0F91D3156BA2A0009CB40A /* SHKCustomActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA40553146F0EFF00685C81 /* SHKCustomActionSheet.m */; };
 		7A0F91D4156BA2A0009CB40A /* SHKCustomFormController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536AF11DBE3B9004A1712 /* SHKCustomFormController.m */; };
@@ -420,6 +424,8 @@
 		43C91DF411EBAE4800F31FAE /* SHKTumblr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKTumblr.m; sourceTree = "<group>"; };
 		43D1DEEF11D5CDD200550D75 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		43EF406D11D3FFF800B1F700 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		57EE9140157C2A14006F1B1A /* SHKWeibo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKWeibo.h; sourceTree = "<group>"; };
+		57EE9141157C2A14006F1B1A /* SHKWeibo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKWeibo.m; sourceTree = "<group>"; };
 		7A0F91CD156B9FF2009CB40A /* SHKDelicious.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHKDelicious.h; path = Delicious/SHKDelicious.h; sourceTree = "<group>"; };
 		7A0F91CE156B9FF2009CB40A /* SHKDelicious.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHKDelicious.m; path = Delicious/SHKDelicious.m; sourceTree = "<group>"; };
 		7A0F9246156BA2A0009CB40A /* libShareKitNoSubmodules.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libShareKitNoSubmodules.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -981,6 +987,7 @@
 		43A536C011DBE3B9004A1712 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				57EE913F157C2A14006F1B1A /* Weibo */,
 				7A0F91CB156B9FCE009CB40A /* Delicious */,
 				FDB495A11520349A00505A99 /* Readability */,
 				B7EFCD8914C6B966004910F1 /* Diigo */,
@@ -1112,6 +1119,15 @@
 				43C91DF411EBAE4800F31FAE /* SHKTumblr.m */,
 			);
 			path = Tumblr;
+			sourceTree = "<group>";
+		};
+		57EE913F157C2A14006F1B1A /* Weibo */ = {
+			isa = PBXGroup;
+			children = (
+				57EE9140157C2A14006F1B1A /* SHKWeibo.h */,
+				57EE9141157C2A14006F1B1A /* SHKWeibo.m */,
+			);
+			path = Weibo;
 			sourceTree = "<group>";
 		};
 		7A0F91CB156B9FCE009CB40A /* Delicious */ = {
@@ -1345,6 +1361,7 @@
 				7A26E5BC156CD8A70011E15F /* Base64Transcoder.h in Headers */,
 				7A26E5C0156CD8A70011E15F /* hmac.h in Headers */,
 				7A26E5C4156CD8A70011E15F /* sha1.h in Headers */,
+				57EE9143157C2A14006F1B1A /* SHKWeibo.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1360,6 +1377,7 @@
 				7A26E5BF156CD8A70011E15F /* hmac.h in Headers */,
 				7A26E5C3156CD8A70011E15F /* sha1.h in Headers */,
 				7ACA93FD156D192100E7006E /* FBFrictionlessRequestSettings.h in Headers */,
+				57EE9142157C2A14006F1B1A /* SHKWeibo.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1612,6 +1630,7 @@
 				7A26E5BA156CD8A70011E15F /* Base64Transcoder.c in Sources */,
 				7A26E5BE156CD8A70011E15F /* hmac.c in Sources */,
 				7A26E5C2156CD8A70011E15F /* sha1.c in Sources */,
+				57EE9145157C2A14006F1B1A /* SHKWeibo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1728,6 +1747,7 @@
 				7A26E5BD156CD8A70011E15F /* hmac.c in Sources */,
 				7A26E5C1156CD8A70011E15F /* sha1.c in Sources */,
 				7ACA93FE156D192100E7006E /* FBFrictionlessRequestSettings.m in Sources */,
+				57EE9144157C2A14006F1B1A /* SHKWeibo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
