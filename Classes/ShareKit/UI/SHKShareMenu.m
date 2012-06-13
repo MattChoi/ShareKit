@@ -257,7 +257,7 @@
 	NSDictionary *rowData = [self rowDataAtIndexPath:indexPath];
 	cell.textLabel.text = [rowData objectForKey:@"name"];
 	
-    UIImage *icon = [UIImage imageNamed: [NSString stringWithFormat: @"ShareKit.bundle/%@.png", [rowData objectForKey:@"className"]]];    
+    UIImage *icon = [UIImage imageNamed: [NSString stringWithFormat: @"ShareKit.bundle/ShareKit.bundle/%@.png", [rowData objectForKey:@"className"]]];    
     cell.imageView.image = icon;
     
 	if (cell.editingAccessoryView == nil)
