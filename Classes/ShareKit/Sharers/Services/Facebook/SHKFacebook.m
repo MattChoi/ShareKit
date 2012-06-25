@@ -250,6 +250,8 @@ static NSString *const kSHKFacebookUserInfo =@"kSHKFacebookUserInfo";
 			[params setObject:item.title forKey:@"caption"];
 		if (item.text) 
 			[params setObject:item.text forKey:@"message"];
+        if (item.URL)
+            [params setObject:[item.URL absoluteString] forKey:@"link"];
 		[params setObject:item.image forKey:@"picture"];
 		// There does not appear to be a way to add the photo 
 		// via the dialog option:
@@ -455,7 +457,7 @@ static NSString *const kSHKFacebookUserInfo =@"kSHKFacebookUserInfo";
             break;
         case SHKShareTypeImage:
             rootView.image = item.image;
-            rootView.text = item.title;            
+            rootView.text = item.text;
         default:
             break;
     }    
@@ -474,7 +476,7 @@ static NSString *const kSHKFacebookUserInfo =@"kSHKFacebookUserInfo";
             self.item.text = form.textView.text;
             break;
         case SHKShareTypeImage:
-            self.item.title = form.textView.text;
+            self.item.text = form.textView.text;
         default:
             break;
     }    
