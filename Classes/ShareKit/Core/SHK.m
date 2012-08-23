@@ -40,6 +40,7 @@
 
 NSString * SHKLocalizedStringFormat(NSString* key);
 NSString * const SHKHideCurrentViewFinishedNotification = @"SHKHideCurrentViewFinished";
+extern NSString * const NSURLIsExcludedFromBackupKey __attribute__((weak_import));
 
 @interface SHK ()
 
