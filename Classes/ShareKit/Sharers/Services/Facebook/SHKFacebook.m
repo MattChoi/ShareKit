@@ -28,6 +28,7 @@
 #import "SHKFacebook.h"
 #import "SHKConfiguration.h"
 #import "NSMutableDictionary+NSNullsToEmptyStrings.h"
+#import "SHKiOS6SocialShare.h"
 
 static NSString *const kSHKStoredItemKey=@"kSHKStoredItem";
 static NSString *const kSHKFacebookAccessTokenKey=@"kSHKFacebookAccessToken";
@@ -167,6 +168,30 @@ static NSString *const kSHKFacebookUserInfo =@"kSHKFacebookUserInfo";
 {
 	return NO;
 }
+
+
+
+- (void)share {
+	
+    if ([self iOS6ScoialShareFrameworkAvailable]) {
+        [SHKiOS6SocialShare SLServiceType:SHKSLServiceTypeFacebook];
+        SHKSharer *sharer =[SHKiOS6SocialShare shareItem:self.item];
+        sharer.quiet = self.quiet;
+        sharer.shareDelegate = self.shareDelegate;
+		[SHKFacebook logout];//to clean credentials - we will not need them anymore
+		return;        
+    }
+}
+
+- (BOOL)iOS6ScoialShareFrameworkAvailable {
+    
+    if (NSClassFromString(@"SLComposeViewController")) {
+		return YES;
+	}
+	
+	return NO;
+}
+
 
 #pragma mark -
 #pragma mark Authentication

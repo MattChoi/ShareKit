@@ -33,6 +33,7 @@
 #import "JSONKit.h"
 #import "SHKXMLResponseParser.h"
 #import "SHKiOS5Twitter.h"
+#import "SHKiOS6SocialShare.h"
 #import "NSMutableDictionary+NSNullsToEmptyStrings.h"
 
 static NSString *const kSHKTwitterUserInfo=@"kSHKTwitterUserInfo";
@@ -119,6 +120,15 @@ static NSString *const kSHKTwitterUserInfo=@"kSHKTwitterUserInfo";
 
 - (void)share {
 	
+    if ([self iOS6ScoialShareFrameworkAvailable]) {
+        [SHKiOS6SocialShare SLServiceType:SHKSLServiceTypeTwitter];
+        SHKSharer *sharer =[SHKiOS6SocialShare shareItem:self.item];
+        sharer.quiet = self.quiet;
+        sharer.shareDelegate = self.shareDelegate;
+		[SHKTwitter logout];//to clean credentials - we will not need them anymore
+		return;
+    }
+    
 	if ([self twitterFrameworkAvailable]) {
 		
 		SHKSharer *sharer =[SHKiOS5Twitter shareItem:self.item];
@@ -137,6 +147,14 @@ static NSString *const kSHKTwitterUserInfo=@"kSHKTwitterUserInfo";
 }
 
 #pragma mark -
+
+- (BOOL)iOS6ScoialShareFrameworkAvailable {
+    
+    if (NSClassFromString(@"SLComposeViewController")) {
+		return YES;
+	}
+	return NO;
+}
 
 - (BOOL)twitterFrameworkAvailable {
 	

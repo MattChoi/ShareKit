@@ -29,6 +29,7 @@
 
 #import "SHKConfiguration.h"
 #import "SHKWeibo.h"
+#import "SHKiOS6SocialShare.h"
 
 #define SHKWeiboCallbackUrl		@"http://getsharekit.com/oauthcallback"
 
@@ -97,6 +98,54 @@
 	return NO;
 }
 
+#pragma mark -
+#pragma mark Commit Share
+
+- (void)share {
+	
+    if ([self iOS6ScoialShareFrameworkAvailable]) {
+        [SHKiOS6SocialShare SLServiceType:SHKSLServiceTypeSinaWeibo];
+        SHKSharer *sharer =[SHKiOS6SocialShare shareItem:self.item];
+        sharer.quiet = self.quiet;
+        sharer.shareDelegate = self.shareDelegate;
+		[SHKWeibo logout];//to clean credentials - we will not need them anymore
+		return;
+        
+    }
+    	
+	BOOL itemPrepared = [self prepareItem];
+	
+	//the only case item is not prepared is when we wait for URL to be shortened on background thread. In this case [super share] is called in callback method
+    if (itemPrepared) {
+        [super share];
+	}
+}
+
+- (BOOL)iOS6ScoialShareFrameworkAvailable {
+    
+    if (NSClassFromString(@"SLComposeViewController")) {
+		return YES;
+	}
+	
+	return NO;
+}
+
+- (BOOL)prepareItem {
+	
+	BOOL result = YES;
+    
+    if (item.shareType == SHKShareTypeImage)
+	{
+		[item setCustomValue:item.title forKey:@"status"];
+	}
+	
+	else if (item.shareType == SHKShareTypeText)
+	{
+		[item setCustomValue:item.text forKey:@"status"];
+	}
+	
+	return result;
+}
 
 #pragma mark -
 #pragma mark Authorization
