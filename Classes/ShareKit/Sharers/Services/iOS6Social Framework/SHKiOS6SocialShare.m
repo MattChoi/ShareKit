@@ -38,12 +38,43 @@ static SHKSLServiceType socicalType;
 
 + (NSString *)sharerTitle
 {
-	return @"Twitter";
+    switch (socicalType) {
+        case SHKSLServiceTypeFacebook:
+           return @"Facebook"; 
+            break;
+        case SHKSLServiceTypeSinaWeibo:
+            return @"Weibo";
+            break;
+        case SHKSLServiceTypeTwitter:
+            return @"Twitter";
+            break;
+        case SHKSLServiceTypeNone:
+            return @"";
+            break;
+            
+    }
+    
+    return @"";
 }
 
 + (NSString *)sharerId
 {
-	return @"SHKTwitter";
+    switch (socicalType) {
+        case SHKSLServiceTypeFacebook:
+            return @"SHKFacebook";
+            break;
+        case SHKSLServiceTypeSinaWeibo:
+            return @"SHKWeibo";
+            break;
+        case SHKSLServiceTypeTwitter:
+            return @"SHKTwitter";
+            break;
+        case SHKSLServiceTypeNone:
+            return @"";
+            break;
+            
+    }
+	return @"";
 }
 
 - (void)share {

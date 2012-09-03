@@ -14,7 +14,7 @@
 		24B7981515F0BD41003859F3 /* SHKiOS6SocialShare.h in Headers */ = {isa = PBXBuildFile; fileRef = 24B7981215F0BD41003859F3 /* SHKiOS6SocialShare.h */; };
 		24B7981715F0BD41003859F3 /* SHKiOS6SocialShare.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B7981315F0BD41003859F3 /* SHKiOS6SocialShare.m */; };
 		24B7981815F0BD41003859F3 /* SHKiOS6SocialShare.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B7981315F0BD41003859F3 /* SHKiOS6SocialShare.m */; };
-		24CCF96515ECCA1500CEC87C /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24CCF96415ECCA1500CEC87C /* Social.framework */; };
+		24CCF96515ECCA1500CEC87C /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24CCF96415ECCA1500CEC87C /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		28F335F11007B36200424DE2 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootViewController.xib */; };
@@ -476,7 +476,7 @@
 		43A5383211DBE493004A1712 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootViewController.h; path = Example/RootViewController.h; sourceTree = "<group>"; };
 		43A5383311DBE493004A1712 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootViewController.m; path = Example/RootViewController.m; sourceTree = "<group>"; };
 		43A5383411DBE493004A1712 /* ShareKitAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShareKitAppDelegate.h; path = Example/ShareKitAppDelegate.h; sourceTree = "<group>"; };
-		43A5383511DBE493004A1712 /* ShareKitAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShareKitAppDelegate.m; path = Example/ShareKitAppDelegate.m; sourceTree = "<group>"; };
+		43A5383511DBE493004A1712 /* ShareKitAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShareKitAppDelegate.m; path = Classes/Example/ShareKitAppDelegate.m; sourceTree = "<group>"; };
 		43C91D1C11EB963600F31FAE /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "Resources-iPad/MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		43C91DF311EBAE4800F31FAE /* SHKTumblr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKTumblr.h; sourceTree = "<group>"; };
 		43C91DF411EBAE4800F31FAE /* SHKTumblr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKTumblr.m; sourceTree = "<group>"; };
@@ -681,7 +681,6 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				24CCF96415ECCA1500CEC87C /* Social.framework */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -698,6 +697,7 @@
 			isa = PBXGroup;
 			children = (
 				28A0AAE50D9B0CCF005BE974 /* ShareKit_Prefix.pch */,
+				43A5383511DBE493004A1712 /* ShareKitAppDelegate.m */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
 			name = "Other Sources";
@@ -718,6 +718,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				24CCF96415ECCA1500CEC87C /* Social.framework */,
 				7A2B025514A342D800E68A4C /* CFNetwork.framework */,
 				7A3C61ED147520B700C47D14 /* Twitter.framework */,
 				C0D3077A147BDC8100E74EA3 /* CoreLocation.framework */,
@@ -884,7 +885,6 @@
 				43A5383211DBE493004A1712 /* RootViewController.h */,
 				43A5383311DBE493004A1712 /* RootViewController.m */,
 				43A5383411DBE493004A1712 /* ShareKitAppDelegate.h */,
-				43A5383511DBE493004A1712 /* ShareKitAppDelegate.m */,
 				7AA4056E146F1D6400685C81 /* ShareKitDemoConfigurator.h */,
 				7AA4056F146F1D6400685C81 /* ShareKitDemoConfigurator.m */,
 			);

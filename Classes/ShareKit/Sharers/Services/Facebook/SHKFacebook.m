@@ -181,6 +181,8 @@ static NSString *const kSHKFacebookUserInfo =@"kSHKFacebookUserInfo";
 		[SHKFacebook logout];//to clean credentials - we will not need them anymore
 		return;        
     }
+    
+    [super share];
 }
 
 - (BOOL)iOS6ScoialShareFrameworkAvailable {
