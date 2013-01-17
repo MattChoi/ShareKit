@@ -1,8 +1,11 @@
 //
-//  SHKLinkedInOAMutableURLRequest.h
+//  TencentOAMutableURLRequest.h
 //  ShareKit
 //
-//  Created by Robin Hos (Everdune) on 9/22/11.
+//  Created by icyleaf on 12-5-3.
+//  Copyright (c) 2012年 icyleaf.com. All rights reserved.
+//
+
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -24,26 +27,9 @@
 //
 //
 
+
 #import "OAMutableURLRequest.h"
 
-@interface SHKLinkedInOAMutableURLRequest : OAMutableURLRequest {
-    NSString *callback;
-}
-
-- (id)initWithURL:(NSURL *)aUrl
-		 consumer:(OAConsumer *)aConsumer
-			token:(OAToken *)aToken
-            realm:(NSString *)aRealm
-signatureProvider:(id<OASignatureProviding, NSObject>)aProvider 
-         callback:(NSString*)aCallback;
-
-- (id)initWithURL:(NSURL *)aUrl
-		 consumer:(OAConsumer *)aConsumer
-			token:(OAToken *)aToken
-            realm:(NSString *)aRealm
-signatureProvider:(id<OASignatureProviding, NSObject>)aProvider
-            nonce:(NSString *)aNonce
-        timestamp:(NSString *)aTimestamp
-         callback:(NSString*)aCallback;
+@interface TencentOAMutableURLRequest : OAMutableURLRequest
 
 @end

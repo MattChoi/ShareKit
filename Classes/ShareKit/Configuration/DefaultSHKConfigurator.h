@@ -50,6 +50,36 @@
 - (NSArray*)defaultFavoriteImageSharers;
 - (NSArray*)defaultFavoriteTextSharers;
 - (NSArray*)defaultFavoriteFileSharers;
+- (NSNumber*)forcePreSinaWeiboAccess;
+- (NSString*)sinaWeiboConsumerKey;
+- (NSString*)sinaWeiboConsumerSecret;
+- (NSString*)sinaWeiboCallbackUrl;
+- (NSNumber*)sinaWeiboUseXAuth;
+- (NSString*)sinaWeiboScreenname;
+- (NSString*)sinaWeiboUserID;
+- (NSString*)netEaseWeiboConsumerKey;
+- (NSString*)netEaseWeiboConsumerSecret;
+- (NSString*)netEaseWeiboCallbackUrl;
+- (NSNumber*)netEaseWeiboUseXAuth;
+- (NSString*)netEaseaWeiboScreenname;
+- (NSString*)netEaseWeiboUserID;
+- (NSString*)tencentWeiboConsumerKey;
+- (NSString*)tencentWeiboConsumerSecret;
+- (NSString*)tencentWeiboCallbackUrl;
+- (NSString*)tencentWeixinAppId;
+- (NSString*)tencentWeixinAppKey;
+- (NSString*)doubanConsumerKey;
+- (NSString*)doubanConsumerSecret;
+- (NSString*)doubanCallbackUrl;
+- (NSString*)renrenAppId;
+- (NSString*)renrenConsumerKey;
+- (NSString*)renrenConsumerSecret;
+- (NSString*)plurkConsumerKey;
+- (NSString*)plurkConsumerSecret;
+- (NSString*)plurkCallbackUrl;
+- (NSString*)vkontakteAppId;
+- (NSString*)facebookAppId;
+- (NSString*)facebookLocalAppId;
 - (NSString*)vkontakteAppId;
 - (NSString*)facebookAppId;
 - (NSString*)facebookLocalAppId;
@@ -87,7 +117,7 @@
 - (UIColor*)barTintForView:(UIViewController*)vc;
 - (UIColor*)formFontColor;
 - (UIColor*)formBackgroundColor;
-- (NSString*)modalPresentationStyle;
+- (NSString*)modalPresentationStyleForController:(UIViewController *)controller;
 - (NSString*)modalTransitionStyle;
 - (NSNumber*)maxFavCount;
 - (NSNumber*)autoOrderFavoriteSharers;
@@ -105,13 +135,15 @@
 //SHKPrint
 - (NSNumber*)printOutputType;
 //SHKMail
-- (NSString*)mailBody;
+- (NSArray *)mailToRecipients;
 - (NSNumber*)isMailHTML;
-- (NSArray*)mailToRecipients;
 - (NSNumber*)mailJPGQuality;
 - (NSNumber*)sharedWithSignature;
 //SHKFacebook
 - (NSString *)facebookURLSharePictureURI;
 - (NSString *)facebookURLShareDescription;
-
+//SHKTextMessage
+- (NSArray *)textMessageToRecipients;
+//SHKInstagram and future others
+-(NSString*) popOverSourceRect;
 @end

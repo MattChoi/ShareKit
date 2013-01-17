@@ -40,6 +40,165 @@
  leaving that decision up to the user.
  */
 
+// Sina Weibo
+
+
+// If you want to force use of old-style, for example to ensure
+// sina weibo accounts don't end up in the devices account store, set this to true.
+- (NSNumber*)forcePreSinaWeiboAccess
+{
+    return [NSNumber numberWithBool:false];
+}
+
+// Fill sina weibo App Key(Consumer Key) below and Do not forget to fill it on facebook developer ("URL Scheme Suffix").
+// Leave it blank unless you are sure of what you are doing.
+//
+// The CFBundleURLSchemes in your App-Info.plist should be "sinaweibosso." + App Key
+// Example:
+//    sinaWeiboConsumerKey = 1631351849
+//
+//    Your CFBundleURLSchemes entry: sinaweibosso.1631351849
+- (NSString*)sinaWeiboConsumerKey {
+	return @"1631351849";
+}
+
+- (NSString*)sinaWeiboConsumerSecret {
+	return @"9164c304b4e547b8cdbf024fc4534720";
+}
+
+// You need to set this if using OAuth (MUST be set and SAME AS "Callback Url" of "OAuth 2.0 Auth Settings" on Sina Weibo open plaform.
+// Url like this: http://open.weibo.com/apps/{app_key}/info/advanced
+- (NSString*)sinaWeiboCallbackUrl {
+	return @"http://icyleaf.com";
+}
+
+// To use xAuth, set to 1
+- (NSNumber*)sinaWeiboUseXAuth {
+	return [NSNumber numberWithInt:0];
+}
+
+// Enter your sina weibo screen name (Only for xAuth)
+- (NSString*)sinaWeiboScreenname {
+	return @"icyleaf";
+}
+
+//Enter your app's sina weibo account if you'd like to ask the user to follow it when logging in. (Only for xAuth)
+- (NSString*)sinaWeiboUserID {
+	return @"1708250715";
+}
+
+// NetEase Weibo
+- (NSString*)netEaseWeiboConsumerKey
+{
+    return @"FP4aD8G9cEFNZEBv";
+}
+
+- (NSString*)netEaseWeiboConsumerSecret
+{
+    return @"ZohrmWOBEnVC16jNWIEliXytq62f6xDh";
+}
+
+// You need to set this if using OAuth (MUST be set "null")
+- (NSString*)netEaseWeiboCallbackUrl
+{
+    return @"null";
+}
+
+// To use xAuth, set to 1
+- (NSNumber*)netEaseWeiboUseXAuth
+{
+    return [NSNumber numberWithInt:0];
+}
+
+// Enter your sina weibo screen name (Only for xAuth)
+- (NSString*)netEaseaWeiboScreenname
+{
+    return @"icyleaf";
+}
+
+//Enter your app's sina weibo account if you'd like to ask the user to follow it when logging in. (Only for xAuth)
+- (NSString*)netEaseWeiboUserID
+{
+    return @"";
+}
+
+
+// Tencent Weibo
+- (NSString*)tencentWeiboConsumerKey
+{
+    return @"801065801";
+}
+
+- (NSString*)tencentWeiboConsumerSecret
+{
+    return @"f33650da32c7b1f335311d0c1bd9a6f2";
+}
+
+- (NSString*)tencentWeiboCallbackUrl
+{
+    return @"null";
+}
+
+// Tencent Weixin - http://open.weixin.qq.com
+- (NSString*)tencentWeixinAppId
+{
+    return @"wx59794006e6eb35f5";
+}
+
+- (NSString*)tencentWeixinAppKey
+{
+    return @"290fc50a89598b79a1f4d6e3dfc3abc6";
+}
+
+
+// Douban
+- (NSString*)doubanConsumerKey {
+	return @"035c8265fdb968b10a158731f92c3a13";
+}
+
+- (NSString*)doubanConsumerSecret {
+	return @"bd44db472be8bf16";
+}
+
+// You need to set this if using OAuth (MUST be set, it could be any words)
+- (NSString*)doubanCallbackUrl {
+	return @"http://icyleaf.com";
+}
+
+
+// RenRen
+- (NSString*)renrenAppId
+{
+    return @"134180";
+}
+
+- (NSString*)renrenConsumerKey
+{
+    return @"ff5fe131651842c7adbdc061f676dc88";
+}
+
+- (NSString*)renrenConsumerSecret
+{
+    return @"41d17695626d4c43b3572ce7f923b8a3";
+}
+
+
+// Plurk
+- (NSString*)plurkConsumerKey
+{
+    return @"Vfh091HVf15O";
+}
+
+- (NSString*)plurkConsumerSecret
+{
+    return @"mFX8ntsPL2p2Dz17jwKWs8PU7eDHDaR9";
+}
+
+- (NSString*)plurkCallbackUrl
+{
+    return @"http://icyleaf.com";
+}
+
 
 // Vkontakte
 // SHKVkontakteAppID is the Application ID provided by Vkontakte
@@ -88,6 +247,10 @@
  2. 'Application Type' should be set to BROWSER (not client)
  3. 'Callback URL' should match whatever you enter in SHKTwitterCallbackUrl.  The callback url doesn't have to be an actual existing url.  The user will never get to it because ShareKit intercepts it before the user is redirected.  It just needs to match.
  */
+
+- (NSNumber*)forcePreIOS5TwitterAccess {
+    return [NSNumber numberWithBool:false];
+}
 
 - (NSString*)twitterConsumerKey {
 	return @"48Ii81VO5NtDKIsQDZ3Ggw";
@@ -190,6 +353,23 @@
     return @"app://foursquare";
 }
 
+/*
+ Favorite Sharers
+ ----------------
+ These values are used to define the default favorite sharers appearing on ShareKit's action sheet.
+ */
+- (NSArray*)defaultFavoriteURLSharers {
+    return [NSArray arrayWithObjects:@"SHKDouban",@"SHKSinaWeibo",@"SHKRenren",@"SHKNetEaseWeibo", nil];
+}
+- (NSArray*)defaultFavoriteImageSharers {
+    return [NSArray arrayWithObjects:@"SHKSinaWeibo",@"SHKNetEaseWeibo", nil];
+}
+- (NSArray*)defaultFavoriteTextSharers {
+    return [NSArray arrayWithObjects:@"SHKMail",@"SHKDouban",@"SHKSinaWeibo",@"SHKNetEaseWeibo", nil];
+}
+- (NSArray*)defaultFavoriteFileSharers {
+    return [NSArray arrayWithObjects:@"SHKMail",@"SHKEvernote", nil];
+}
 
 /*
  UI Configuration : Basic

@@ -11,6 +11,9 @@
 
 #import "SHKReadItLater.h"
 #import "SHKFacebook.h"
+#import "SHKSinaWeibo.h"
+#import "SHKTencentWeixin.h"
+
 #import "SHKConfiguration.h"
 #import "ShareKitDemoConfigurator.h"
 
@@ -23,7 +26,8 @@
 #pragma mark -
 #pragma mark Application lifecycle
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
     // Override point for customization after app launch    
 	
     //Here you load ShareKit submodule with app specific configuration
@@ -38,6 +42,9 @@
 	[navigationController setToolbarHidden:NO];
 	
 	[self performSelector:@selector(testOffline) withObject:nil afterDelay:0.5];
+    
+    // Register Tencent Weixin App
+    [SHKTencentWeixin registerApp];
 	
 	return YES;
 }
@@ -54,10 +61,15 @@
 
 - (BOOL)handleOpenURL:(NSURL*)url
 {
-	NSString* scheme = [url scheme];
-  if ([scheme hasPrefix:[NSString stringWithFormat:@"fb%@", SHKCONFIG(facebookAppId)]])
-    return [SHKFacebook handleOpenURL:url];
-  return YES;
+    NSString* scheme = [url scheme];
+    if ([scheme hasPrefix:[NSString stringWithFormat:@"fb%@", SHKCONFIG(facebookAppId)]])
+        return [SHKFacebook handleOpenURL:url];
+    else if ([scheme hasPrefix:[NSString stringWithFormat:@"sinaweibosso.%@", SHKCONFIG(sinaWeiboConsumerKey)]])
+        return [SHKSinaWeibo handleOpenURL:url];
+    else if ([scheme hasPrefix:[NSString stringWithFormat:@"%@", SHKCONFIG(tencentWeixinAppId)]])
+        return [SHKTencentWeixin handleOpenURL:url];
+    
+    return YES;
 }
 
 - (BOOL)application:(UIApplication *)application 
@@ -65,19 +77,20 @@
   sourceApplication:(NSString *)sourceApplication 
          annotation:(id)annotation 
 {
-  return [self handleOpenURL:url];
+    return [self handleOpenURL:url];
 }
 
 - (BOOL)application:(UIApplication *)application 
       handleOpenURL:(NSURL *)url 
 {
-  return [self handleOpenURL:url];  
+    return [self handleOpenURL:url];
 }
 
 #pragma mark -
 #pragma mark Memory management
 
-- (void)dealloc {
+- (void)dealloc
+{
 	[navigationController release];
 	[window release];
 	[super dealloc];

@@ -59,6 +59,166 @@
  leaving that decision up to the user.
  */
 
+// Sina Weibo - http://open.weibo.com/
+
+// If you want to force use of old-style, for example to ensure
+// sina weibo accounts don't end up in the devices account store, set this to true.
+- (NSNumber*)forcePreSinaWeiboAccess
+{
+    return [NSNumber numberWithBool:false];
+}
+
+// Fill sina weibo App Key(Consumer Key) below and Do not forget to fill it on facebook developer ("URL Scheme Suffix").
+// Leave it blank unless you are sure of what you are doing.
+//
+// The CFBundleURLSchemes in your App-Info.plist should be "sinaweibosso." + App Key
+// Example:
+//    sinaWeiboConsumerKey = 1631351849
+//
+//    Your CFBundleURLSchemes entry: sinaweibosso.1631351849
+- (NSString*)sinaWeiboConsumerKey {
+	return @"";
+}
+
+- (NSString*)sinaWeiboConsumerSecret {
+	return @"";
+}
+
+// You need to set this if using OAuth (MUST be set and SAME AS "Callback Url" of "OAuth 2.0 Auth Settings" on Sina Weibo open plaform.
+// Url like this: http://open.weibo.com/apps/{app_key}/info/advanced
+- (NSString*)sinaWeiboCallbackUrl {
+	return @"";
+}
+
+// To use xAuth, set to 1
+- (NSNumber*)sinaWeiboUseXAuth {
+	return [NSNumber numberWithInt:0];
+}
+
+// Enter your sina weibo screen name (Only for xAuth)
+- (NSString*)sinaWeiboScreenname {
+	return @"";
+}
+
+//Enter your app's sina weibo account if you'd like to ask the user to follow it when logging in. (Only for xAuth)
+- (NSString*)sinaWeiboUserID {
+	return @"";
+}
+
+
+// NetEase Weibo - http://open.t.163.com/
+- (NSString*)netEaseWeiboConsumerKey
+{
+    return @"";
+}
+
+- (NSString*)netEaseWeiboConsumerSecret
+{
+    return @"";
+}
+
+// You need to set this if using OAuth (MUST be set "null")
+- (NSString*)netEaseWeiboCallbackUrl
+{
+    return @"null";
+}
+
+// To use xAuth, set to 1
+- (NSNumber*)netEaseWeiboUseXAuth
+{
+    return [NSNumber numberWithInt:0];
+}
+
+// Enter your netease weibo screen name (Only for xAuth)
+- (NSString*)netEaseaWeiboScreenname
+{
+    return @"";
+}
+
+//Enter your app's netease weibo account if you'd like to ask the user to follow it when logging in. (Only for xAuth)
+- (NSString*)netEaseWeiboUserID
+{
+    return @"";
+}
+
+
+// Tencent Weibo - http://open.t.qq.com/
+- (NSString*)tencentWeiboConsumerKey
+{
+    return @"";
+}
+
+- (NSString*)tencentWeiboConsumerSecret
+{
+    return @"";
+}
+
+- (NSString*)tencentWeiboCallbackUrl
+{
+    return @"";
+}
+
+// Tencent Weixin - http://open.weixin.qq.com
+- (NSString*)tencentWeixinAppId
+{
+    return @"";
+}
+
+- (NSString*)tencentWeixinAppKey
+{
+    return @"";
+}
+
+// Douban - http://www.douban.com/service/apidoc/
+- (NSString*)doubanConsumerKey {
+	return @"";
+}
+
+- (NSString*)doubanConsumerSecret {
+	return @"";
+}
+
+// You need to set this if using OAuth (MUST be set, it could be any words)
+- (NSString*)doubanCallbackUrl {
+	return @"";
+}
+
+
+// RenRen - http://dev.renren.com/
+- (NSString*)renrenAppId
+{
+    return @"";
+}
+
+- (NSString*)renrenConsumerKey
+{
+    return @"";
+}
+
+- (NSString*)renrenConsumerSecret
+{
+    return @"";
+}
+
+
+// Plurk - http://www.plurk.com/API
+- (NSString*)plurkConsumerKey
+{
+    return @"";
+}
+
+- (NSString*)plurkConsumerSecret
+{
+    return @"";
+}
+
+// You need to set this if using OAuth (Dont forget set it during create app on web)
+- (NSString*)plurkCallbackUrl
+{
+    return @"";
+}
+
+
 // Vkontakte
 // SHKVkontakteAppID is the Application ID provided by Vkontakte
 - (NSString*)vkontakteAppId {
@@ -260,8 +420,8 @@
     return nil;
 }
 
-// iPad views
-- (NSString*)modalPresentationStyle {
+// iPad views. You can change presentation style for different sharers
+- (NSString *)modalPresentationStyleForController:(UIViewController *)controller {
 	return @"UIModalPresentationFormSheet";// See: http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIViewController_Class/Reference/Reference.html#//apple_ref/occ/instp/UIViewController/modalPresentationStyle
 }
 
@@ -325,6 +485,10 @@
     return NSClassFromString(@"SHKShareMenu");
 }
 
+- (Class)SHKShareMenuSubclass {    
+    return NSClassFromString(@"SHKShareMenu");
+}
+
 - (Class)SHKShareMenuCellSubclass {
     return NSClassFromString(@"UITableViewCell");
 }
@@ -377,18 +541,13 @@
 
 /* SHKMail */
 
-//constructed during runtime from user input in shareForm by default
-- (NSString*)mailBody {
-    return nil;
+//You can use this to prefill recipients. User enters them in MFMailComposeViewController by default. Should be array of NSStrings.
+- (NSArray *)mailToRecipients {
+	return nil;
 }
 
 - (NSNumber*)isMailHTML {
     return [NSNumber numberWithInt:1];
-}
-
-//user enters them in MFMailComposeViewController by default. Should be array of NSStrings.
-- (NSArray*)mailToRecipients {
-    return nil;
 }
 
 //used only if you share image. Values from 1.0 to 0.0 (maximum compression).
@@ -412,7 +571,16 @@
     return nil;
 }
 
+/* SHKTextMessage */
 
+//You can use this to prefill recipients. User enters them in MFMessageComposeViewController by default. Should be array of NSStrings.
+- (NSArray *)textMessageToRecipients {
+  return nil;
+}
 
+-(NSString*) popOverSourceRect;
+ {
+  return NSStringFromCGRect(CGRectZero);
+}
 
 @end
