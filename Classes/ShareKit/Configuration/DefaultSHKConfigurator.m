@@ -485,10 +485,6 @@
     return NSClassFromString(@"SHKShareMenu");
 }
 
-- (Class)SHKShareMenuSubclass {    
-    return NSClassFromString(@"SHKShareMenu");
-}
-
 - (Class)SHKShareMenuCellSubclass {
     return NSClassFromString(@"UITableViewCell");
 }
