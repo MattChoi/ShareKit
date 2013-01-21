@@ -5,9 +5,7 @@
 	<key>actions</key>
 	<array>
 		<string>SHKMail</string>
-		<string>SHKTextMessage</string>
 		<string>SHKPhotoAlbum</string>
-		<string>SHKCopy</string>
 		<string>SHKPrint</string>
 	</array>
 	<key>services</key>
