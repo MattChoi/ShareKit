@@ -10,6 +10,9 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		24962DED16F94F5C00FB7FA7 /* SHKFacebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 24962DE916F94EF600FB7FA7 /* SHKFacebook.m */; };
+		24962DEE16F94F5D00FB7FA7 /* SHKFacebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 24962DE916F94EF600FB7FA7 /* SHKFacebook.m */; };
+		24962DF116F9508700FB7FA7 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24962DEF16F9504D00FB7FA7 /* FacebookSDK.framework */; };
 		24B7981415F0BD41003859F3 /* SHKiOS6SocialShare.h in Headers */ = {isa = PBXBuildFile; fileRef = 24B7981215F0BD41003859F3 /* SHKiOS6SocialShare.h */; };
 		24B7981515F0BD41003859F3 /* SHKiOS6SocialShare.h in Headers */ = {isa = PBXBuildFile; fileRef = 24B7981215F0BD41003859F3 /* SHKiOS6SocialShare.h */; };
 		24B7981715F0BD41003859F3 /* SHKiOS6SocialShare.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B7981315F0BD41003859F3 /* SHKiOS6SocialShare.m */; };
@@ -88,7 +91,6 @@
 		7A0F920F156BA2A0009CB40A /* (null) in Sources */ = {isa = PBXBuildFile; };
 		7A0F9210156BA2A0009CB40A /* (null) in Sources */ = {isa = PBXBuildFile; };
 		7A0F9211156BA2A0009CB40A /* SHKEvernote.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379F2B11291AC9700D2A41E /* SHKEvernote.m */; };
-		7A0F921C156BA2A0009CB40A /* SHKFacebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536DD11DBE3B9004A1712 /* SHKFacebook.m */; };
 		7A0F921D156BA2A0009CB40A /* NSError+SHKFoursquareV2.m in Sources */ = {isa = PBXBuildFile; fileRef = C0276D7514336ACC00C93FAA /* NSError+SHKFoursquareV2.m */; };
 		7A0F921E156BA2A0009CB40A /* SHKFoursquareV2CheckInForm.m in Sources */ = {isa = PBXBuildFile; fileRef = C0276D7714336ACD00C93FAA /* SHKFoursquareV2CheckInForm.m */; };
 		7A0F921F156BA2A0009CB40A /* SHKFoursquareV2Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = C0276D7914336ACD00C93FAA /* SHKFoursquareV2Venue.m */; };
@@ -209,7 +211,6 @@
 		7AB5353B1552BE7D00171BCE /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC22D2E14580A2000126878 /* SBJsonBase.m */; };
 		7AB5353D1552BE7D00171BCE /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC22D3014580A2000126878 /* SBJsonParser.m */; };
 		7AB5353F1552BE7D00171BCE /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC22D3214580A2000126878 /* SBJsonWriter.m */; };
-		7AB5354A1552BE7D00171BCE /* SHKFacebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536DD11DBE3B9004A1712 /* SHKFacebook.m */; };
 		7AB5354C1552BE7D00171BCE /* NSError+SHKFoursquareV2.m in Sources */ = {isa = PBXBuildFile; fileRef = C0276D7514336ACC00C93FAA /* NSError+SHKFoursquareV2.m */; };
 		7AB5354E1552BE7D00171BCE /* SHKFoursquareV2CheckInForm.m in Sources */ = {isa = PBXBuildFile; fileRef = C0276D7714336ACD00C93FAA /* SHKFoursquareV2CheckInForm.m */; };
 		7AB535501552BE7D00171BCE /* SHKFoursquareV2Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = C0276D7914336ACD00C93FAA /* SHKFoursquareV2Venue.m */; };
@@ -298,6 +299,9 @@
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* ShareKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShareKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		24962DE816F94EF600FB7FA7 /* SHKFacebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKFacebook.h; sourceTree = "<group>"; };
+		24962DE916F94EF600FB7FA7 /* SHKFacebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKFacebook.m; sourceTree = "<group>"; };
+		24962DEF16F9504D00FB7FA7 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../FacebookSDK.framework; sourceTree = "<group>"; };
 		24B7981215F0BD41003859F3 /* SHKiOS6SocialShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKiOS6SocialShare.h; sourceTree = "<group>"; };
 		24B7981315F0BD41003859F3 /* SHKiOS6SocialShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKiOS6SocialShare.m; sourceTree = "<group>"; };
 		24CCF96415ECCA1500CEC87C /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -601,6 +605,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24962DF116F9508700FB7FA7 /* FacebookSDK.framework in Frameworks */,
 				24CCF96515ECCA1500CEC87C /* Social.framework in Frameworks */,
 				7A28825E15540175007DC379 /* libShareKit.a in Frameworks */,
 				7A2B025614A342D800E68A4C /* CFNetwork.framework in Frameworks */,
@@ -659,6 +664,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		24962DE716F94EF600FB7FA7 /* FacebookSDK */ = {
+			isa = PBXGroup;
+			children = (
+				24962DE816F94EF600FB7FA7 /* SHKFacebook.h */,
+				24962DE916F94EF600FB7FA7 /* SHKFacebook.m */,
+			);
+			path = FacebookSDK;
+			sourceTree = "<group>";
+		};
 		24B7980A15F0BBC5003859F3 /* iOS6Social Framework */ = {
 			isa = PBXGroup;
 			children = (
@@ -708,6 +722,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				24962DEF16F9504D00FB7FA7 /* FacebookSDK.framework */,
 				24CCF96415ECCA1500CEC87C /* Social.framework */,
 				7A2B025514A342D800E68A4C /* CFNetwork.framework */,
 				7A3C61ED147520B700C47D14 /* Twitter.framework */,
@@ -1098,6 +1113,7 @@
 		43A536C011DBE3B9004A1712 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				24962DE716F94EF600FB7FA7 /* FacebookSDK */,
 				24B7980A15F0BBC5003859F3 /* iOS6Social Framework */,
 				57EE913F157C2A14006F1B1A /* Weibo */,
 				7A0F91CB156B9FCE009CB40A /* Delicious */,
@@ -1707,7 +1723,6 @@
 				7A0F920F156BA2A0009CB40A /* (null) in Sources */,
 				7A0F9210156BA2A0009CB40A /* (null) in Sources */,
 				7A0F9211156BA2A0009CB40A /* SHKEvernote.m in Sources */,
-				7A0F921C156BA2A0009CB40A /* SHKFacebook.m in Sources */,
 				7A0F921D156BA2A0009CB40A /* NSError+SHKFoursquareV2.m in Sources */,
 				7A0F921E156BA2A0009CB40A /* SHKFoursquareV2CheckInForm.m in Sources */,
 				7A0F921F156BA2A0009CB40A /* SHKFoursquareV2Venue.m in Sources */,
@@ -1745,6 +1760,7 @@
 				7AB8051115AC7BCC004FB430 /* GTMNSString+HTML.m in Sources */,
 				24B7981815F0BD41003859F3 /* SHKiOS6SocialShare.m in Sources */,
 				24E3D02116A80C4000CF4FC2 /* OAMutableURLRequest.m in Sources */,
+				24962DEE16F94F5D00FB7FA7 /* SHKFacebook.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1811,7 +1827,6 @@
 				7AB5353B1552BE7D00171BCE /* SBJsonBase.m in Sources */,
 				7AB5353D1552BE7D00171BCE /* SBJsonParser.m in Sources */,
 				7AB5353F1552BE7D00171BCE /* SBJsonWriter.m in Sources */,
-				7AB5354A1552BE7D00171BCE /* SHKFacebook.m in Sources */,
 				7AB5354C1552BE7D00171BCE /* NSError+SHKFoursquareV2.m in Sources */,
 				7AB5354E1552BE7D00171BCE /* SHKFoursquareV2CheckInForm.m in Sources */,
 				7AB535501552BE7D00171BCE /* SHKFoursquareV2Venue.m in Sources */,
@@ -1879,6 +1894,7 @@
 				7AB8051015AC7BC9004FB430 /* GTMNSString+HTML.m in Sources */,
 				24B7981715F0BD41003859F3 /* SHKiOS6SocialShare.m in Sources */,
 				24E3D02016A80C3F00CF4FC2 /* OAMutableURLRequest.m in Sources */,
+				24962DED16F94F5C00FB7FA7 /* SHKFacebook.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1908,12 +1924,16 @@
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = (
 					"$(ARCHS_STANDARD_32_BIT)",
 					arm6,
 				);
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1935,12 +1955,16 @@
 		1D6058950D05DD3E006BFB54 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = (
 					"$(ARCHS_STANDARD_32_BIT)",
 					arm6,
 				);
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ShareKit_Prefix.pch;
 				GCC_WARN_UNINITIALIZED_AUTOS = NO;
@@ -1961,9 +1985,10 @@
 		7A0F9244156BA2A0009CB40A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/ShareKitLibrary.dst;
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1990,9 +2015,10 @@
 		7A0F9245156BA2A0009CB40A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				COPY_PHASE_STRIP = YES;
 				DSTROOT = /tmp/ShareKitLibrary.dst;
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ShareKitLibrary/ShareKitLibrary-Prefix.pch";
@@ -2013,9 +2039,13 @@
 		7AB534371552AADD00171BCE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/ShareKitLibrary.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -2042,9 +2072,13 @@
 		7AB534381552AADD00171BCE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				COPY_PHASE_STRIP = YES;
 				DSTROOT = /tmp/ShareKitLibrary.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ShareKitLibrary/ShareKitLibrary-Prefix.pch";

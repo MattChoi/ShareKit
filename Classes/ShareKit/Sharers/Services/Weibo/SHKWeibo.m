@@ -71,18 +71,18 @@
 
 + (BOOL)canShareURL
 {
-	return YES;
+	return NSClassFromString(@"SLComposeViewController");
 }
 
 + (BOOL)canShareText
 {
-	return YES;
+	return NSClassFromString(@"SLComposeViewController");
 }
 
 // TODO use img.ly to support this
 + (BOOL)canShareImage
 {
-	return YES;
+	return NSClassFromString(@"SLComposeViewController");
 }
 
 + (BOOL)canGetUserInfo
