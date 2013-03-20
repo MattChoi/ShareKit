@@ -216,6 +216,10 @@ static NSString *const kSHKFacebookUserInfo =@"kSHKFacebookUserInfo";
 {			
  	if (![self validateItem])
 		return NO;
+    
+    if (FBSession.activeSession.state != FBSessionStateOpen)
+        return NO;
+        
     FBRequestConnection *connection = [[[FBRequestConnection alloc] init] autorelease];
 
         if (item.shareType == SHKShareTypeURL && item.URL)
