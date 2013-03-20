@@ -12,7 +12,7 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		24962DED16F94F5C00FB7FA7 /* SHKFacebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 24962DE916F94EF600FB7FA7 /* SHKFacebook.m */; };
 		24962DEE16F94F5D00FB7FA7 /* SHKFacebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 24962DE916F94EF600FB7FA7 /* SHKFacebook.m */; };
-		24962DF116F9508700FB7FA7 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24962DEF16F9504D00FB7FA7 /* FacebookSDK.framework */; };
+		24962DF716F9978C00FB7FA7 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24962DF616F9978C00FB7FA7 /* FacebookSDK.framework */; };
 		24B7981415F0BD41003859F3 /* SHKiOS6SocialShare.h in Headers */ = {isa = PBXBuildFile; fileRef = 24B7981215F0BD41003859F3 /* SHKiOS6SocialShare.h */; };
 		24B7981515F0BD41003859F3 /* SHKiOS6SocialShare.h in Headers */ = {isa = PBXBuildFile; fileRef = 24B7981215F0BD41003859F3 /* SHKiOS6SocialShare.h */; };
 		24B7981715F0BD41003859F3 /* SHKiOS6SocialShare.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B7981315F0BD41003859F3 /* SHKiOS6SocialShare.m */; };
@@ -301,7 +301,7 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		24962DE816F94EF600FB7FA7 /* SHKFacebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKFacebook.h; sourceTree = "<group>"; };
 		24962DE916F94EF600FB7FA7 /* SHKFacebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKFacebook.m; sourceTree = "<group>"; };
-		24962DEF16F9504D00FB7FA7 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../FacebookSDK.framework; sourceTree = "<group>"; };
+		24962DF616F9978C00FB7FA7 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		24B7981215F0BD41003859F3 /* SHKiOS6SocialShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKiOS6SocialShare.h; sourceTree = "<group>"; };
 		24B7981315F0BD41003859F3 /* SHKiOS6SocialShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKiOS6SocialShare.m; sourceTree = "<group>"; };
 		24CCF96415ECCA1500CEC87C /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -605,7 +605,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24962DF116F9508700FB7FA7 /* FacebookSDK.framework in Frameworks */,
+				24962DF716F9978C00FB7FA7 /* FacebookSDK.framework in Frameworks */,
 				24CCF96515ECCA1500CEC87C /* Social.framework in Frameworks */,
 				7A28825E15540175007DC379 /* libShareKit.a in Frameworks */,
 				7A2B025614A342D800E68A4C /* CFNetwork.framework in Frameworks */,
@@ -722,7 +722,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				24962DEF16F9504D00FB7FA7 /* FacebookSDK.framework */,
+				24962DF616F9978C00FB7FA7 /* FacebookSDK.framework */,
 				24CCF96415ECCA1500CEC87C /* Social.framework */,
 				7A2B025514A342D800E68A4C /* CFNetwork.framework */,
 				7A3C61ED147520B700C47D14 /* Twitter.framework */,

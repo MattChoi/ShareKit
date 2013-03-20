@@ -229,30 +229,34 @@ static NSString *const kSHKFacebookUserInfo =@"kSHKFacebookUserInfo";
                                        SHKCONFIG(appName),@"name",
                                        nil];
 
-        FBRequest *request1 =
-        [FBRequest requestWithGraphPath:@"me/feed"
-                             parameters:params
-                             HTTPMethod:@"POST"];
-        
-
-        [connection addRequest:request1
-             completionHandler:
-         ^(FBRequestConnection *connection, id result, NSError *error) {
-             if (!error) {
-             }else{
-                 // error_code=190: user changed password or revoked access to the application,
-                 // so spin the user back over to authentication :
-                 if (error.code == 190)
-                 {
-                     [SHKFacebook flushAccessToken];
-                     [self authorize];
+        // Invoke the dialog
+        [FBWebDialogs presentFeedDialogModallyWithSession:nil
+                                               parameters:params
+                                                  handler:
+         ^(FBWebDialogResult result, NSURL *resultURL, NSError *error) {
+             if (error) {
+                 // Case A: Error launching the dialog or publishing story.
+                 NSLog(@"Error publishing story.");
+             } else {
+                 if (result == FBWebDialogResultDialogNotCompleted) {
+                     // Case B: User clicked the "x" icon
+                     NSLog(@"User canceled story publishing.");
+                 } else {
+                     // Case C: Dialog shown and the user clicks Cancel or Share
+                     NSDictionary *urlParams = nil;
+                     if (![urlParams valueForKey:@"post_id"]) {
+                         // User clicked the Cancel button
+                         NSLog(@"User canceled story publishing.");
+                     } else {
+                         // User clicked the Share button
+                         NSString *postID = [urlParams valueForKey:@"post_id"];
+                         NSLog(@"Posted story, id: %@", postID);
+                     }
                  }
              }
-             [self sendDidFinish];
-         }
-                batchEntryName:@"status-post"
-         ];
-
+         }];
+        
+        return YES;
         
 	}
 	else if (item.shareType == SHKShareTypeText && item.text)
