@@ -222,6 +222,9 @@ static NSString *const kSHKFacebookUserInfo =@"kSHKFacebookUserInfo";
         
     FBRequestConnection *connection = [[[FBRequestConnection alloc] init] autorelease];
 
+    NSString *actions = [NSString stringWithFormat:@"{\"name\":\"%@ %@\",\"link\":\"%@\"}",
+                         SHKLocalizedString(@"Get"), SHKCONFIG(appName), SHKCONFIG(appURL)];
+    
         if (item.shareType == SHKShareTypeURL && item.URL)
 	{
 		NSString *url = [item.URL absoluteString];
@@ -229,8 +232,8 @@ static NSString *const kSHKFacebookUserInfo =@"kSHKFacebookUserInfo";
                                        self.item.facebookURLShareDescription?self.item.facebookURLShareDescription:@"",@"description",
                                        self.item.facebookURLSharePictureURI?self.item.facebookURLSharePictureURI:@"",@"picture",
                                        url?url:@"", @"link",
-                                       item.title, @"message",
-                                       SHKCONFIG(appName),@"name",
+                                       item.title, @"name",
+                                       actions,@"actions",
                                        nil];
 
         // Invoke the dialog
